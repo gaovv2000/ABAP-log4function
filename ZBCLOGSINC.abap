@@ -35,7 +35,7 @@
                               value(p_s_para) TYPE zsfuncparas
                               value(p_data)
                      CHANGING pt_detial TYPE ANY TABLE
-                       .
+                      D .
 
     DATA
       : lr_typedescr  TYPE REF TO cl_abap_typedescr
@@ -57,7 +57,7 @@
     "------------- get kind type -----------------
 
     PERFORM frm_get_typedescr USING p_data CHANGING lr_typedescr l_type.
-
+    g_serial            = 1                    . "reset the element index
     ls_rlgd-zlogsnum    = p_id                 .
     ls_rlgd-paramtype   = p_s_para-paramtype   .
     ls_rlgd-zparameter  = p_s_para-parameter   .
